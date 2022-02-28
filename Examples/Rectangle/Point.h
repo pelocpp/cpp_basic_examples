@@ -15,13 +15,17 @@ private:
 public:
     // c'tor(s)
     Point();
-    Point(double x, double y);
+    Point(double, double);
 
     // getter/setter
     double getX() const;
     double getY() const;
-    void setX(double x);
-    void setY(double y);
+    void setX(double);
+    void setY(double);
+
+    // operators
+    Point operator+ (const Point&);
+    Point& operator+= (const Point&);
 };
 
 std::ostream& operator << (std::ostream&, const Point&);

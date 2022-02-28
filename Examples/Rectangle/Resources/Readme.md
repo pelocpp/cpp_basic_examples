@@ -24,16 +24,61 @@ Folgende Anforderungen an die Klasse `Rectangle` sind mit geeigneten programmier
     Achten Sie darauf, dass beim Ändern einer Koordinate
     die Regel &ldquo;x<sub>1</sub> &le; x<sub>2</sub>&rdquo; und &ldquo;y<sub>1</sub> &ge; y<sub>2</sub>&rdquo; beibehalten bleibt.
 
+  * Überladen Sie den Operator `operator<<` geeignet, um `Rectangle`-Objekt in der Konsole ausgeben zu können.
 
-a) WEITER mit dem Text aus
+  * Schreiben Sie eine Methode `circumference` zur Berechnung des Umfangs eines Rechtecks.
 
-https://peterloos.de/legacy/index.php/m-cpp/m-cpp-classes-objects/83-a-cpp-class-rectangle
+  * Die Methode `diagonal` berechnet die Länge der Diagonalen des Rechtecks.
 
-b) Quellcode aufräumen !!!!
+  * Schreiben Sie eine Methode `area` zur Berechnung der Fläche eines Rechtecks.
 
-c) Im Readme zum Gesamt Projekt fehlt dieses Beispiel !!!
+  * Die Methode `isSquare` überprüft, ob das Rechteck ein Quadrat ist oder nicht.
 
+  * Schreiben Sie eine Methode `center`, die den Punkt im Zentrum des Rechtecks berechnet.
+    Übergeben Sie zu diesem Zweck die Adressen zweier `double`-Variablen an die Methode,
+    um dort das Resultat ablegen zu können. Alternativ können Sie eine Klasse `Point` definieren,
+    die von der `center`-Methode als Rückgabetyp verwendet wird.
 
+  * Schreiben Sie eine Methode `adjustWidth`, die die Breite eines Rechtecks ändert: *x*<sub>2</sub> = *x*<sub>1</sub> + *width*.
+
+    *Beispiel*: Für ein Rechteck mit den Koordinaten (1, 1) und (4, 5) besitzt nach dem Aufruf `adjustWidth(10);`
+    die Koordinate *x*<sub>2</sub> den Wert 11.
+
+  * Schreiben Sie eine Methode `adjustHeight`, die die Höhe eines Rechtecks ändert:
+
+    *y*<sub>2</sub> = *y*<sub>1</sub> - *height*.
+
+    Ergänzen Sie den Operator `operator<<` um weitere Angaben wie zum Beispiel Informationen zur Fläche und zum Umfang,
+    zur Diagonalen und darüber, ob das Rechteck ein Quadrat ist.
+
+    Schreiben Sie eine Methode `intersection`, die ein zweites Rectangle-Objekt als Parameter übergeben bekommt
+    und dasjenige Rechteck berechnet, das die beiden Rechtecke gemeinsam haben.
+    Das Resultat-Rechteck ist als Rückgabewert der `intersection`-Methode zurückzuliefern.
+
+*Beispiel*:
+
+<pre>
+Rectangle rect1(1, 4, 4, 1);
+Rectangle rect2(2, 5, 6, 2);
+Rectangle rect = rect1.Intersection(rect2);
+</pre>
+
+liefert ein Rechtecht `rect` mit den Eckpunkten (2, 4) und (4, 2) zurück.
+
+  * Schreiben Sie eine Methode Move, die ein Rechteck in x- und/oder y-Richtung verschieben kann:
+
+*Beispiel*:
+
+<pre>
+Rectangle rect(1,1,4,5);
+rect.MoveTo(3, 6);
+</pre>
+
+Das Rechteck `rect` wird um 3 in *x*- und 6 in *y*-Richtung verschoben.
+
+Teilen Sie die Implementierung geeignet auf mehrere Dateien auf!
+
+Testen Sie die geforderte Funktionalität durch entsprechende Testfunktionen im Hauptprogramm.
 
 ---
 

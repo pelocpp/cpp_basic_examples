@@ -13,6 +13,7 @@ die Beispiele auf dem Niveau für C++-Einsteiger
 
 Folgende Aspekte werden betrachtet:
   * Prinzipielle Realisierung einer einfachen Klasse *ohne* dynamische Daten im Instanzvariablenbereich
+  * Konstruktoren
   * Zugriffsrechte (`private`, `public`)
   * Überladen von Operatoren
   * `friend`-Mechanismus
@@ -24,11 +25,24 @@ Folgende Aspekte werden betrachtet:
 
 Folgende Aspekte werden betrachtet:
   * Prinzipielle Realisierung einer einfachen Klasse *ohne* dynamische Daten im Instanzvariablenbereich
+  * Konstruktoren
   * Zugriffsrechte (`private`, `public`)
   * Überladen von Operatoren
   * `friend`-Mechanismus
   * getter/setter-Methoden
   * Klassenmethoden
+
+---
+
+#### [Klasse *Rectangle*](Examples/Rectangle/Resources/Readme.md)
+
+Folgende Aspekte werden betrachtet:
+  * Prinzipielle Realisierung einer einfachen Klasse *ohne* dynamische Daten im Instanzvariablenbereich
+  * Konstruktoren
+  * Zugriffsrechte (`private`, `public`)
+  * getter/setter-Methoden
+  * Realisierung einfacher Methoden
+  * Objekte als Rückgabewert von Methoden
 
 ---
 

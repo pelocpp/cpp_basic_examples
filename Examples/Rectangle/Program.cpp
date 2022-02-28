@@ -165,7 +165,7 @@ namespace Rectangle_02 {
     {
         Rectangle rect(1, 1, 4, 5);
         std::cout << rect << std::endl;
-        rect.move(5, -5);
+        rect.move(Point (5, -5));
         std::cout << rect << std::endl;
     }
 
@@ -200,7 +200,7 @@ namespace Rectangle_02 {
 
 int main()
 {
-    Rectangle_01::test_version_01();
+    //Rectangle_01::test_version_01();
     Rectangle_02::test_version_02();
     return 0;
 }

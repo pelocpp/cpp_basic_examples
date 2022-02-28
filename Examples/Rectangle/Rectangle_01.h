@@ -19,17 +19,17 @@ namespace Rectangle_01 {
     public:
         // c'tors
         Rectangle();
-        Rectangle(double x1, double y1, double x2, double y2);
+        Rectangle(double, double, double, double);
 
         // getter/setter
         double getX1();
         double getY1();
         double getX2();
         double getY2();
-        void setX1(double x1);
-        void setY1(double y1);
-        void setX2(double x2);
-        void setY2(double y2);
+        void setX1(double);
+        void setY1(double);
+        void setX2(double);
+        void setY2(double);
 
         // public interface
         double circumference() const;
@@ -37,10 +37,10 @@ namespace Rectangle_01 {
         double area() const;
         bool isSquare() const;
         void center(double& x, double& y) const;
-        void adjustWidth(double width);
-        void adjustHeight(double height);
-        void move(double x, double y);
-        Rectangle intersection(const Rectangle& rect) const;
+        void adjustWidth(double);
+        void adjustHeight(double);
+        void move(double, double);
+        Rectangle intersection(const Rectangle&) const;
 
     private:
         // private helper methods

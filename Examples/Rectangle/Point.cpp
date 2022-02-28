@@ -14,6 +14,18 @@ double Point::getY() const { return m_y; }
 void Point::setX(double x) { m_x = x; };
 void Point::setY(double y) { m_y = y; };
 
+// operator helpers
+Point Point::operator+ (const Point& p)
+{
+    return Point(m_x + p.m_x, m_y + p.m_y);
+}
+
+Point& Point::operator+= (const Point& p)
+{
+    *this = *this + p;
+    return *this;
+}
+
 // output
 std::ostream& operator << (std::ostream& os, const Point& p)
 {

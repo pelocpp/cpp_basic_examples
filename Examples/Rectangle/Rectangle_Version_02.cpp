@@ -2,25 +2,16 @@
 // Rectangle.cpp // Version 02
 // ===========================================================================
 
-//#include <iostream>
-//#include <cmath>
-//using namespace std;
-
-// #include "Point.h"
-#include "Rectangle_02.h"
-
-
 #include <iostream>
-// #include <cmath>
+#include <cmath>
 
+#include "Point.h"
+#include "Rectangle_02.h"
 
 namespace Rectangle_02 {
 
-
     // c'tor(s)
-    Rectangle::Rectangle() : m_p1(0, 0), m_p2(0, 0)
-    {
-    }
+    Rectangle::Rectangle() : m_p1(0.0, 0.0), m_p2(0.0, 0.0) {}
 
     Rectangle::Rectangle(Point p1, Point p2) : m_p1(p1), m_p2(p2)
     {
@@ -34,35 +25,6 @@ namespace Rectangle_02 {
     }
 
     // getter/setter
-    //double Rectangle::getX1() { return m_x1; };
-    //double Rectangle::getY1() { return m_y1; };
-    //double Rectangle::getX2() { return m_x2; };
-    //double Rectangle::getY2() { return m_y2; };
-
-    //void Rectangle::setX1(double x)
-    //{
-    //    m_p1.setX(x);
-    //    normalize();
-    //}
-
-    //void Rectangle::setY1(double y)
-    //{
-    //    m_p1.setY(y);
-    //    normalize();
-    //}
-
-    //void Rectangle::setX2(double x)
-    //{
-    //    m_p2.setX(x);
-    //    normalize();
-    //}
-
-    //void Rectangle::setY2(double y)
-    //{
-    //    m_p2.setY(y);
-    //    normalize();
-    //}
-
     Point Rectangle::getLeftUpper() const
     {
         return m_p1;
@@ -93,7 +55,7 @@ namespace Rectangle_02 {
 
     double Rectangle::diagonal() const
     {
-        return sqrt((
+        return std::sqrt((
             (m_p2.getX() - m_p1.getX()) * (m_p2.getX() - m_p1.getX()) +
             (m_p1.getY() - m_p2.getY()) * (m_p1.getY() - m_p2.getY()))
         );
@@ -113,7 +75,8 @@ namespace Rectangle_02 {
     {
         return Point(
             m_p1.getX() + (m_p2.getX() - m_p1.getX()) / 2.0,
-            m_p2.getY() + (m_p1.getY() - m_p2.getY()) / 2.0);
+            m_p2.getY() + (m_p1.getY() - m_p2.getY()) / 2.0
+        );
     }
 
     void Rectangle::adjustWidth(double width)
@@ -128,12 +91,10 @@ namespace Rectangle_02 {
         normalize();
     }
 
-    void Rectangle::move(double x, double y)
+    void Rectangle::move(const Point& p)
     {
-        m_p1.setX(m_p1.getX() + x);
-        m_p1.setY(m_p1.getY() + y);
-        m_p2.setX(m_p2.getX() + x);
-        m_p2.setY(m_p2.getY() + y);
+        m_p1 += p;
+        m_p2 += p;
     }
 
     Rectangle Rectangle::intersection(const Rectangle& r) const

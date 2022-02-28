@@ -2,7 +2,9 @@
 // Rectangle.cpp // Version 01
 // ===========================================================================
 
-#include "Point.h"
+#include <iostream>
+#include <cmath>
+
 #include "Rectangle_01.h"
 
 namespace Rectangle_01 {
@@ -21,9 +23,6 @@ namespace Rectangle_01 {
     double Rectangle::getY1() { return m_y1; };
     double Rectangle::getX2() { return m_x2; };
     double Rectangle::getY2() { return m_y2; };
-
-    //Point Rectangle::getLeftUpper() const { return m_p1; };
-    //Point Rectangle::getRightLower() const { return m_p2; };
 
     void Rectangle::setX1(double x1)
     {
@@ -58,8 +57,7 @@ namespace Rectangle_01 {
     double Rectangle::diagonal() const
     {
         return std::sqrt(
-            (double)((m_x2 - m_x1) * (m_x2 - m_x1) +
-            (m_y1 - m_y2) * (m_y1 - m_y2))
+            (m_x2 - m_x1) * (m_x2 - m_x1) + (m_y1 - m_y2) * (m_y1 - m_y2)
         );
     }
 

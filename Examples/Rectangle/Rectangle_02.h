@@ -7,6 +7,7 @@
 #include <iostream>
 
 #include "Point.h"
+#include "Rectangle_02.h"
 
 namespace Rectangle_02 {
 
@@ -19,20 +20,12 @@ namespace Rectangle_02 {
     public:
         // c'tors
         Rectangle();
-        Rectangle(Point p1, Point p2);
-        Rectangle(double x1, double y1, double x2, double y2);
+        Rectangle(Point, Point);
+        Rectangle(double, double, double, double);
 
         // getter/setter
-        //double getX1() const;
-        //double getY1() const;
-        //double getX2() const;
-        //double getY2() const;
         Point getLeftUpper() const;
         Point getRightLower() const;
-        //void setX1(double x);
-        //void setY1(double y);
-        //void setX2(double x);
-        //void setY2(double y);
         void setLeftUpper(const Point&);
         void setRightLower(const Point&);
 
@@ -42,10 +35,10 @@ namespace Rectangle_02 {
         double area() const;
         bool isSquare() const;
         Point center() const;
-        void adjustWidth(double width);
-        void adjustHeight(double height);
-        void move(double x, double y);
-        Rectangle intersection(const Rectangle& rect) const;
+        void adjustWidth(double);
+        void adjustHeight(double);
+        void move(const Point&);
+        Rectangle intersection(const Rectangle&) const;
 
     private:
         // private helper methods
