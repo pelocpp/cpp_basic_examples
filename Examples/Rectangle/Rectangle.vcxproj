@@ -141,7 +141,6 @@
   <ItemGroup>
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Program.cpp" />
-    <ClCompile Include="ProgramTestInclude.cpp" />
     <ClCompile Include="Rectangle_Version_01.cpp" />
     <ClCompile Include="Rectangle_Version_02.cpp" />
   </ItemGroup>

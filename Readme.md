@@ -17,7 +17,8 @@ Folgende Aspekte werden betrachtet:
   * Zugriffsrechte (`private`, `public`)
   * Überladen von Operatoren
   * `friend`-Mechanismus
-  * getter/setter-Methoden
+  * *getter*/*setter*-Methoden
+  * Objekte als Rückgabewert von Methoden
 
 ---
 
@@ -29,7 +30,7 @@ Folgende Aspekte werden betrachtet:
   * Zugriffsrechte (`private`, `public`)
   * Überladen von Operatoren
   * `friend`-Mechanismus
-  * getter/setter-Methoden
+  * *getter*/*setter*-Methoden
   * Klassenmethoden
 
 ---
@@ -40,7 +41,7 @@ Folgende Aspekte werden betrachtet:
   * Prinzipielle Realisierung einer einfachen Klasse *ohne* dynamische Daten im Instanzvariablenbereich
   * Konstruktoren
   * Zugriffsrechte (`private`, `public`)
-  * getter/setter-Methoden
+  * *getter*/*setter*-Methoden
   * Realisierung einfacher Methoden
   * Objekte als Rückgabewert von Methoden
 
