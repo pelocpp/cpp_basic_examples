@@ -4,6 +4,12 @@
 
 #pragma once
 
+#include <iostream>
+#include <string>
+#include <vector>
+
+#include "Contact.h"
+
 class IPhonebook
 {
     // public interface

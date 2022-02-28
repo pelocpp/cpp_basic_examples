@@ -13,8 +13,6 @@
 #endif
 #endif  // _DEBUG
 
-#include <iostream>
-
 #include "IntegerSet_01_Classic.h"
 
 namespace IntegerSetClassic {

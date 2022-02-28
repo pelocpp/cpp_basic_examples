@@ -4,14 +4,8 @@
 
 #include <iostream>
 #include <string>
-#include <iterator>
-#include <vector>
 #include <algorithm>
-#include <numeric>
-#include <sstream>
 
-#include "Contact.h"
-#include "IPhoneBook.h"
 #include "PhoneBook.h"
 
 // function prototypes

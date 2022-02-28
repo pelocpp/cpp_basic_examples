@@ -2,8 +2,6 @@
 // IntegerSet: Variant 3 - Classic Approach with Move Semantics
 // ===============================================================================
 
-#include <iostream>
-
 #include "IntegerSet_03_Classic_MoveSemantics.h"
 
 namespace IntegerSetClassic_MoveSemantics {

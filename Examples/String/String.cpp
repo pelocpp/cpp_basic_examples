@@ -2,9 +2,7 @@
 // String.cpp
 // ===========================================================================
 
-#include <iostream>
- 
-using namespace std;
+#include <stdexcept>
 
 #include "String.h"
 
@@ -57,7 +55,7 @@ char& String::operator[] (int index)
 {
     // check parameter
     if (index < 0 || index >= m_len)
-        throw out_of_range("Wrong index");
+        throw std::out_of_range("Wrong index");
 
     return m_ptr[index];
 }
@@ -231,7 +229,7 @@ bool operator!= (const String & s1, const String & s2)
 }
 
 // output operator
-ostream & operator<< (ostream & os, const String & s)
+std::ostream & operator<< (std::ostream & os, const String & s)
 {
     os << '"';
     for (int i = 0; i < s.m_len; i++)
@@ -242,7 +240,7 @@ ostream & operator<< (ostream & os, const String & s)
 }
 
 // input operator
-istream & operator>> (istream & is, String & s)
+std::istream & operator>> (std::istream & is, String & s)
 {
     char line[256];
     is.getline(line, 256);

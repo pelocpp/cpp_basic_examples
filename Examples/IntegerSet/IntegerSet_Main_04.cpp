@@ -13,9 +13,6 @@
 #endif
 #endif  // _DEBUG
 
-#include <iostream>
-#include <vector>
-
 #include "IntegerSet_04_Vector_MoveSemantics.h"
 
 namespace IntegerSetVector_MoveSemantics {

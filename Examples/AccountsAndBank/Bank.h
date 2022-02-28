@@ -2,6 +2,15 @@
 // Bank.h // Demo Implementation Inheritance (Accounts and Bank)
 // ===============================================================================
 
+#pragma once
+
+#include <iostream>
+#include <string>
+#include <vector>
+
+#include "IAccount.h"
+#include "Bank.h"
+
 namespace AccountsAndBank {
 
     constexpr int MaxAccounts = 100;

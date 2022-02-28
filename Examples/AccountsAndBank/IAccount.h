@@ -2,6 +2,8 @@
 // IAccount.h // Demo Implementation Inheritance (Accounts and Bank)
 // ===============================================================================
 
+#pragma once
+
 #define _CRTDBG_MAP_ALLOC
 #include <cstdlib>
 #include <crtdbg.h>
@@ -12,6 +14,8 @@
 #define new DBG_NEW
 #endif
 #endif  // _DEBUG
+
+#include <iostream>
 
 namespace AccountsAndBank {
 

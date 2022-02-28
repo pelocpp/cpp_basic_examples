@@ -4,6 +4,13 @@
 
 #pragma once
 
+#include <iostream>
+#include <string>
+#include <vector>
+
+#include "Contact.h"
+#include "IPhonebook.h"
+
 class Phonebook : public IPhonebook
 {
 private:

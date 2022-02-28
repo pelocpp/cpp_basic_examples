@@ -2,9 +2,6 @@
 // IntegerSet: Variant 2 - Modern Approach (STL container class 'std::vector')
 // ===============================================================================
 
-#include <iostream>
-#include <vector>
-
 #include "IntegerSet_02_Vector.h"
 
 namespace IntegerSetVector {

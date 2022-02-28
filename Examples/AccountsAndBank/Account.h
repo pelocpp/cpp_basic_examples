@@ -2,6 +2,12 @@
 // Account.h // Demo Implementation Inheritance (Accounts and Bank)
 // ===============================================================================
 
+#pragma once
+
+#include <iostream>
+
+#include "IAccount.h"
+
 namespace AccountsAndBank {
 
     class Account : public IAccount

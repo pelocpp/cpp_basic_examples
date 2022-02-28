@@ -2,6 +2,12 @@
 // CurrentAccount.cpp // Demo Implementation Inheritance (Accounts and Bank)
 // ===============================================================================
 
+#pragma once
+
+#include <iostream>
+
+#include "Account.h"
+
 namespace AccountsAndBank {
 
     class CurrentAccount final : public Account

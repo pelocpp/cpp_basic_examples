@@ -2,9 +2,6 @@
 // IntegerSet: Variant 4 - Modern Approach (std::vector / Move Semantics)
 // ===============================================================================
 
-#include <iostream>
-#include <vector>
-
 #include "IntegerSet_04_Vector_MoveSemantics.h"
 
 namespace IntegerSetVector_MoveSemantics {

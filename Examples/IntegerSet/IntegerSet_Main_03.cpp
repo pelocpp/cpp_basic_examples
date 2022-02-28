@@ -13,9 +13,6 @@
 #endif
 #endif  // _DEBUG
 
-#include <iostream>
-#include <vector>
-
 #include "IntegerSet_03_Classic_MoveSemantics.h"
 
 namespace IntegerSetClassic_MoveSemantics {

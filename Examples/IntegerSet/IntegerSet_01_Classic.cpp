@@ -2,8 +2,6 @@
 // IntegerSet: Variant 1 - Classic Approach (using raw pointer with new / delete)
 // ===============================================================================
 
-#include <iostream>
-
 #include "IntegerSet_01_Classic.h"
 
 namespace IntegerSetClassic {

@@ -4,8 +4,6 @@
 
 #include <iostream>
 
-#include "IAccount.h"
-#include "Account.h"
 #include "DepositAccount.h"
 
 namespace AccountsAndBank {

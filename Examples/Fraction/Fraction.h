@@ -2,6 +2,8 @@
 // Fraction.h
 // ===========================================================================
 
+#pragma once
+
 #include <iostream>
 
 class Fraction
