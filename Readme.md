@@ -69,7 +69,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### [Vererbung am Beispiel von Rechtecken betrachntet](Examples/Rectangles/Resources/Readme.md)
+#### [Vererbung am Beispiel von Rechtecken](Examples/Rectangles/Resources/Readme.md)
 
 Folgende Aspekte werden zum Thema &ldquo;Vererbung&rdquo; betrachtet:
   * Entwicklung einer Hierarchie von Klassen
@@ -80,6 +80,7 @@ Folgende Aspekte werden zum Thema &ldquo;Vererbung&rdquo; betrachtet:
   * Schlüsselwörter `virtual`, `override` und `final`
   * Polymorphismus
   * Betrachtung einer Schnittstelle (*Interface*)
+  * Kontrakt mit mehreren Schnittstellen
   * Betrachtung einer abstrakten Basisklasse 
   * Betrachtung von konkreten Klassen
   * Unterschied Schnittstelle versus abstrakte Basisklasse

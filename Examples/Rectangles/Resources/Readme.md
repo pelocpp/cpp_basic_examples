@@ -8,7 +8,8 @@ Folgende Aspekte werden betrachtet:
   * Überschreiben von Methoden (am Beispiel von `draw`)
   * Schlüsselwörter `virtual`, `override` und `final`
   * Polymorphismus
-  * Betrachtung einer Schnittstelle (*Interface*) (am Beispiel von `IRectangle`)
+  * Betrachtung einer Schnittstelle (*Interface* &ndash; am Beispiel von `IRectangle`)
+  * Kontrakt mit mehreren Schnittstellen
   * Betrachtung einer abstrakten Basisklasse (am Beispiel von `Rectangle`)
   * Betrachtung von konkreten Klassen
     (am Beispiel von `ColoredRectangle`, `BlackWhiteRectangle` und `HatchedColoredRectangle`)
