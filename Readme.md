@@ -69,6 +69,23 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
+#### [Vererbung am Beispiel von Rechtecken betrachntet](Examples/Rectangles/Resources/Readme.md)
+
+Folgende Aspekte werden zum Thema &ldquo;Vererbung&rdquo; betrachtet:
+  * Entwicklung einer Hierarchie von Klassen
+  * Konstruktoren von abgeleiteten Klassen und Basisklassen
+  * Verwendung von `public`, `protected` und `private`
+  * Verdecken von Methoden
+  * Überschreiben von Methoden
+  * Schlüsselwörter `virtual`, `override` und `final`
+  * Polymorphismus
+  * Betrachtung einer Schnittstelle (*Interface*)
+  * Betrachtung einer abstrakten Basisklasse 
+  * Betrachtung von konkreten Klassen
+  * Unterschied Schnittstelle versus abstrakte Basisklasse
+
+---
+
 #### [Bankkonten und -institut](Examples/AccountsAndBank/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
