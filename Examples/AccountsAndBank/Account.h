@@ -13,7 +13,7 @@ namespace AccountsAndBank {
     class Account : public IAccount
     {
     protected:
-        double m_accountNumber;
+        int m_accountNumber;
         double m_balance;
 
     public:
