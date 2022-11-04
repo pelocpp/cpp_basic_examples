@@ -211,7 +211,7 @@ namespace IntegerSetVector {
         std::vector<int> vec = { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
         IntegerSet is(vec);
 
-        for (int i = 0; i < is.size(); i++)
+        for (size_t i = 0; i != is.size(); i++)
             std::cout << "Element at " << i << ": " << is[i] << std::endl;
     }
 }

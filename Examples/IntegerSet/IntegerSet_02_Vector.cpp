@@ -13,11 +13,9 @@ namespace IntegerSetVector {
         }
     }
 
-    IntegerSet::IntegerSet(const IntegerSet& set) : m_set(set.m_set) {}
-
     // getter
-    int IntegerSet::size() const {
-        return static_cast<int> (m_set.size());
+    size_t IntegerSet::size() const {
+        return m_set.size();
     }
 
     bool IntegerSet::isEmpty() const {
@@ -28,11 +26,13 @@ namespace IntegerSetVector {
     bool IntegerSet::contains(int n) const {
 
         // search element
-        std::vector<int>::const_iterator it = std::find(
-            m_set.begin(), m_set.end(), n
+        std::vector<int>::const_iterator pos = std::find(
+            m_set.begin(),
+            m_set.end(),
+            n
         );
 
-        return (it != m_set.end()) ? true : false;
+        return (pos != m_set.end()) ? true : false;
     }
 
     bool IntegerSet::insert(int n) {
@@ -47,13 +47,15 @@ namespace IntegerSetVector {
 
     bool IntegerSet::remove(int n) {
 
-        std::vector<int>::const_iterator it = std::find(
-            m_set.begin(), m_set.end(), n
+        std::vector<int>::const_iterator pos = std::remove(
+            m_set.begin(),
+            m_set.end(),
+            n
         );
 
         // element found, delete it
-        if (it != m_set.end()) {
-            m_set.erase(it);
+        if (pos != m_set.end()) {
+            m_set.erase(pos);
             return true;
         }
         else {
@@ -62,18 +64,6 @@ namespace IntegerSetVector {
     }
 
     // operators
-    IntegerSet& IntegerSet::operator= (const IntegerSet& rhs) {
-
-        // prevent self-assignment
-        if (this == &rhs) {
-            return *this;
-        }
-
-        // copy right side to left side (releasing left side)
-        m_set = rhs.m_set;
-        return *this;
-    }
-
     bool operator== (const IntegerSet& lhs, const IntegerSet& rhs) {
 
         // compare sizes
@@ -96,13 +86,13 @@ namespace IntegerSetVector {
         return !(lhs == rhs);
     }
 
-    int IntegerSet::operator[] (size_t n) const {
+    const int& IntegerSet::operator[](size_t n) const {
 
         // check parameter
         if (n < 0)
-            return -1;
+            throw std::out_of_range("Wrong Index in subscript operator");
         if (n >= m_set.size())
-            return -1;
+            throw std::out_of_range("Wrong Index in subscript operator");
 
         return m_set[n];
     }

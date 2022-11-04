@@ -5,6 +5,7 @@
 #pragma once
 
 #include <iostream>
+#include <stdexcept>
 
 namespace IntegerSetClassic {
 
@@ -33,7 +34,7 @@ namespace IntegerSetClassic {
         friend bool operator== (const IntegerSet&, const IntegerSet&);
         friend bool operator!= (const IntegerSet&, const IntegerSet&);
 
-        const int operator[] (size_t) const; // read-only subscript operator
+        const int& operator[](int idx) const;  // read-only index operator
 
         // arithmetic-assignment operators
         friend const IntegerSet& operator+= (IntegerSet&, const IntegerSet&);

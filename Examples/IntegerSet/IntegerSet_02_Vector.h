@@ -6,21 +6,20 @@
 
 #include <iostream>
 #include <vector>
+#include <stdexcept>
 
 namespace IntegerSetVector {
 
     class IntegerSet
     {
     public:
-        // c'tors and d'tor
-        IntegerSet() = default;         // default c'tor;
+        // c'tor(s)
+        IntegerSet() = default;
         IntegerSet(std::vector<int> numbers);  // user-defined c'tor
-        IntegerSet(const IntegerSet&);  // copy c'tor
-        ~IntegerSet() = default;        // d'tor
 
     public:
         // getter
-        int size() const;
+        size_t size() const;
         bool isEmpty() const;
 
         // public methods
@@ -29,11 +28,10 @@ namespace IntegerSetVector {
         bool contains(int) const;
 
         // miscellaneous operators
-        IntegerSet& operator= (const IntegerSet&);
         friend bool operator== (const IntegerSet&, const IntegerSet&);
         friend bool operator!= (const IntegerSet&, const IntegerSet&);
 
-        int operator[] (size_t) const; // read-only subscript operator
+        const int& operator[](size_t idx) const;  // read-only index operator
 
         // arithmetic-assignment operators
         friend const IntegerSet& operator+= (IntegerSet&, const IntegerSet&);

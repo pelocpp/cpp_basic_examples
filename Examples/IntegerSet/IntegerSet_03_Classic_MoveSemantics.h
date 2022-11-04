@@ -37,7 +37,7 @@ namespace IntegerSetClassic_MoveSemantics {
         friend bool operator== (const IntegerSet&, const IntegerSet&);
         friend bool operator!= (const IntegerSet&, const IntegerSet&);
 
-        int operator[] (size_t) const; // read-only subscript operator
+        const int& operator[](int idx) const;  // read-only index operator
 
         // arithmetic-assignment operators
         friend const IntegerSet& operator+= (IntegerSet&, const IntegerSet&);

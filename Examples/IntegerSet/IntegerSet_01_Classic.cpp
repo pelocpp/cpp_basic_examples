@@ -158,13 +158,13 @@ namespace IntegerSetClassic {
         return !(lhs == rhs);
     }
 
-    const int IntegerSet::operator[] (size_t n) const {
+    const int& IntegerSet::operator[](int n) const {
 
         // check parameter
         if (n < 0)
-            return -1;
-        if (n >= static_cast<size_t> (m_num))
-            return -1;
+            throw std::out_of_range("Wrong Index in subscript operator");
+        if (n >= m_num)
+            throw std::out_of_range("Wrong Index in subscript operator");
 
         return m_set[n];
     }
