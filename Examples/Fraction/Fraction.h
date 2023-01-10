@@ -22,9 +22,9 @@ public:
     Fraction(int);
 
     // getter / setter
-    int getNum() const { return m_num; };
+    int getNum() const { return m_num; }
     void setNum(int num);
-    int getDenom() const { return m_denom; };
+    int getDenom() const { return m_denom; }
     void setDenom(int denom);
 
     // unary arithmetic operators
