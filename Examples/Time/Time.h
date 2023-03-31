@@ -21,9 +21,9 @@ public:
     Time(const char*);  // conversion c'tor
 
     // getter // setter
-    int getSeconds() const { return m_seconds; };
-    int getMinutes() const { return m_minutes; };
-    int getHours() const { return m_hours; };
+    int getSeconds() const { return m_seconds; }
+    int getMinutes() const { return m_minutes; }
+    int getHours() const { return m_hours; }
     void setSeconds(int seconds);
     void setMinutes(int minutes);
     void setHours(int hours);

@@ -19,10 +19,10 @@ namespace Rectangle_01 {
     }
 
     // getter/setter
-    double Rectangle::getX1() { return m_x1; };
-    double Rectangle::getY1() { return m_y1; };
-    double Rectangle::getX2() { return m_x2; };
-    double Rectangle::getY2() { return m_y2; };
+    double Rectangle::getX1() { return m_x1; }
+    double Rectangle::getY1() { return m_y1; }
+    double Rectangle::getX2() { return m_x2; }
+    double Rectangle::getY2() { return m_y2; }
 
     void Rectangle::setX1(double x1)
     {

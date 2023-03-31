@@ -35,7 +35,7 @@ namespace Rectangles {
         Rectangle() : Rectangle(0, 0, 0, 0) {};
 
         Rectangle(int x, int y, int width, int height) 
-            : m_x(x), m_y(y), m_width(width), m_height(height) {};
+            : m_x(x), m_y(y), m_width(width), m_height(height) {}
 
         virtual void drawBorder() override final {
             std::cout 
@@ -81,20 +81,20 @@ namespace Rectangles {
 
     // ------------------------------------------
 
-    class BlackWhiteRectangle : public Rectangle
+    class TransparentRectangle : public Rectangle
     {
     public:
-        BlackWhiteRectangle() : BlackWhiteRectangle(0, 0, 0, 0, 0.0) {}
+        TransparentRectangle() : TransparentRectangle(0, 0, 0, 0, 0.0) {}
 
-        BlackWhiteRectangle(int x, int y, int width, int height, double color)
-            : Rectangle(x, y, width, height), m_monochrom(111) {}
+        TransparentRectangle(int x, int y, int width, int height, double color)
+            : Rectangle(x, y, width, height), m_opaque(111) {}
 
         virtual void drawForeground() override {
-            std::cout << "  BlackWhiteRectangle::drawForeground" << std::endl;
+            std::cout << "  TransparentRectangle::drawForeground" << std::endl;
         }
 
     private:
-        int m_monochrom;  // monochromatic value
+        int m_opaque;  // transparency value
     };
 
     // ------------------------------------------
@@ -151,10 +151,10 @@ void test_03()
     using namespace Rectangles;
 
     ColoredRectangle cr1(1, 1, 20, 30, 255);
-    BlackWhiteRectangle br2(2, 2, 30, 40, 111.0);
+    TransparentRectangle tr(2, 2, 30, 40, 111.0);
     ColoredRectangle cr3(3, 3, 50, 60, 127);
 
-    IRectangle* rects[]{ &cr1, &br2, &cr3 };
+    IRectangle* rects[]{ &cr1, &tr, &cr3 };
     for (int i = 0; i < 3; ++i) {
         rects[i]->draw();
     }

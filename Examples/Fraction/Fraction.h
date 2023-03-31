@@ -28,6 +28,7 @@ public:
     void setDenom(int denom);
 
     // unary arithmetic operators
+    friend Fraction operator+ (const Fraction&);
     friend Fraction operator- (const Fraction&);
     friend Fraction operator~ (const Fraction&);
 

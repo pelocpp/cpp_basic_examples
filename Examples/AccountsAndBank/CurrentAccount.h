@@ -21,6 +21,7 @@ namespace AccountsAndBank {
         // c'tors
         CurrentAccount(int account);
         CurrentAccount(int account, double limit);
+        virtual ~CurrentAccount() {};
 
         // getter / setter
         double getLimit();

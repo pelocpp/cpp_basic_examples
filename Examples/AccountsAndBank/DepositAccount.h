@@ -21,7 +21,7 @@ namespace AccountsAndBank {
         // c'tors
         DepositAccount(int account);
         DepositAccount(int account, double interestRate);
-        virtual ~DepositAccount() = default;
+        virtual ~DepositAccount() {};
 
         // public interface
         bool withdraw(double amount) override;

@@ -42,6 +42,11 @@ void Fraction::setDenom(int denom)
 }
 
 // implementation of unary arithmetic operators
+Fraction operator+ (const Fraction& f)
+{
+    return Fraction(f);
+}
+
 Fraction operator- (const Fraction & f)
 {
     return Fraction(-f.m_num, f.m_denom);

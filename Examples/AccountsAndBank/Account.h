@@ -19,11 +19,11 @@ namespace AccountsAndBank {
     public:
         // default c'tor / d'tor
         Account(int account);
-        virtual ~Account() = default;
+        virtual ~Account() {};
 
         // getter / setter
-        double getAccountNumber() override;
-        double getBalance() override;
+        double getAccountNumber() final override;
+        double getBalance() final override;
 
         // public interface
         void deposit(double amount) final override;

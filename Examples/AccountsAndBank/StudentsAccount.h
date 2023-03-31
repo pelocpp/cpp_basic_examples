@@ -17,7 +17,7 @@ namespace AccountsAndBank {
     public:
         // c'tors
         StudentsAccount(int accountNumber);
-        virtual ~StudentsAccount() = default;
+        virtual ~StudentsAccount() {};
 
         // public interface
         bool withdraw(double amount) override;
