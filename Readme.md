@@ -96,6 +96,14 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
+#### [STL](Examples/STL/Resources/Readme.md)
+
+Folgende Aspekte werden betrachtet:
+  * Einführende Beispiel zur STL (Standard Template Library)
+  * Grundlegende STL-Konzepte: Container, Iteratore, Algorithmen und Funktoren
+
+---
+
 #### [Klasse `Phonebook`](Examples/PhoneBook/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
