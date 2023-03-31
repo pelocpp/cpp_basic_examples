@@ -127,16 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Image Include="Resources\Fibonacci.png" />
-    <Image Include="Resources\Fibonacci2.png" />
-    <Image Include="Resources\Teufel.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Readme.md" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Program.cpp" />
-    <ClCompile Include="STL.cpp" />
+    <ClCompile Include="Fibonacci.cpp" />
+    <ClCompile Include="Teufel.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

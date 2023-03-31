@@ -96,11 +96,12 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### [STL](Examples/STL/Resources/Readme.md)
+#### [STL- Standard Template Library](Examples/STL/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
-  * Einführende Beispiel zur STL (Standard Template Library)
-  * Grundlegende STL-Konzepte: Container, Iteratore, Algorithmen und Funktoren
+  * Zwei einfache, einführende Beispiel zur STL (*Standard Template Library*)
+  * Berechnung der Teuflischen Zahlenfolge und von Fibonacci Zahlen
+  * Grundlegende STL-Konzepte: STL-Container, Iteratoren, STL-Algorithmen und Funktionsobjekte
 
 ---
 

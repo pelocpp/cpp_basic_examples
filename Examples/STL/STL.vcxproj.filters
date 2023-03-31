@@ -15,17 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Resources\Fibonacci.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Resources\Fibonacci2.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Resources\Teufel.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Readme.md">
       <Filter>Resource Files</Filter>
     </None>
@@ -34,7 +23,10 @@
     <ClCompile Include="Program.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="STL.cpp">
+    <ClCompile Include="Fibonacci.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Teufel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
