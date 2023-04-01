@@ -6,7 +6,9 @@
 #include <string>
 #include <algorithm>
 
-#include "PhoneBook.h"
+#include "PhonebookEx.h"
+ 
+using namespace PhonebookVector;
 
 // function prototypes
 void main_phonebook_01();
@@ -15,8 +17,6 @@ void main_phonebook_03();
 void main_phonebook_04();
 void main_phonebook_05();
 void main_phonebook_06();
-void main_phonebook_07();
-void main_phonebook_08();
 
 void initPhoneBook(Phonebook& book)
 {
@@ -35,11 +35,12 @@ void main_phonebook_01()
     std::cout << book << std::endl;
 
     bool found = book.contains("Sepp", "Wagner");
-    std::cout << std::boolalpha << "Sepp found: " << found << std::endl;
+    std::cout << std::boolalpha << "Sepp Wagner found: " << found << std::endl;
 
-    found = book.contains("Seppp", "Wagner");
-    std::cout << std::boolalpha << "Seppp found: " << found << std::endl;
+    found = book.contains("Sepp", "Huber");
+    std::cout << std::boolalpha << "Sepp Huber found: " << found << std::endl;
 }
+
 
 void main_phonebook_02()
 {
@@ -49,18 +50,13 @@ void main_phonebook_02()
     std::cout << book << std::endl;
 
     long number = 0;
-    bool found = book.find("Sepp", "Wagner", number);
+    bool found = book.search("Sepp", "Wagner", number);
     std::cout << "Sepp has number " << number << std::endl;
 
-    std::vector<Contact> results = book.findAll("Wagner");
+    bool result = book.remove("Sepp", "Wagner");
+    std::cout << "Removed Sepp: " << std::boolalpha << result << std::endl << std::endl;
 
-    std::cout << "Following 'Wagner' found: " << std::endl;
-
-    std::for_each(
-        results.begin(),
-        results.end(), 
-        Phonebook::Printer(std::cout)
-    );
+    std::cout << book << std::endl;
 }
 
 void main_phonebook_03()
@@ -71,67 +67,35 @@ void main_phonebook_03()
     std::cout << book << std::endl;
 
     long number = 0;
-    bool found = book.find("Sepp", "Wagner", number);
-    std::cout << "Sepp has number " << number << std::endl;
-
-    bool result = book.remove("Sepp", "Wagner", number);
-    std::cout << "Removed Sepp: " << std::boolalpha << result << std::endl << std::endl;
-
-    std::cout << book << std::endl;
-}
-
-void main_phonebook_04()
-{
-    Phonebook book;
-
-    initPhoneBook(book);
-    std::cout << book << std::endl;
-
-    long number = 0;
-    bool found = book.find("Sepp", "Wagner", number);
-    std::cout << "Sepp has number " << number << std::endl;
-
-    bool result = book.remove("Sepp", "Wagner", number);
-    std::cout << "Removed Sepp: " << std::boolalpha << result << std::endl << std::endl;
-
-    std::cout << book << std::endl;
-}
-
-void main_phonebook_05()
-{
-    Phonebook book;
-
-    initPhoneBook(book);
-    std::cout << book << std::endl;
-
-    long number = 0;
-    bool found = book.find("Sepp", "Wagner", number);
+    bool found = book.search("Sepp", "Wagner", number);
     std::cout << "Sepp has number " << number << std::endl;
 
     book.update("Sepp", "Wagner", 1122334455);
     std::cout << "Updated number of Sepp" << std::endl;
 
-    found = book.find("Sepp", "Wagner", number);
+    found = book.search("Sepp", "Wagner", number);
     std::cout << "Sepp now has number " << number << std::endl;
 }
 
-void main_phonebook_06()
+void printName(const std::string& name) {
+    std::cout << ">: " << name << std::endl;
+}
+
+void main_phonebook_04()
 {
     Phonebook book;
     initPhoneBook(book);
-    std::cout << book.toString() << std::endl;
+
+    std::forward_list<std::string> names = book.getNames();
+
+    std::for_each(
+        names.begin(),
+        names.end(),
+        printName
+    );
 }
 
-void main_phonebook_07()
-{
-    Phonebook book;
-    initPhoneBook(book);
-    std::cout << book.toString() << std::endl;
-    book.sort();
-    std::cout << book.toString() << std::endl;
-}
-
-void main_phonebook_08()
+void main_phonebook_05()
 {
     Phonebook book1;
     book1.insert("Hans", "Mueller", 12345);
@@ -150,6 +114,14 @@ void main_phonebook_08()
     std::cout << book1 << std::endl;
 }
 
+void main_phonebook_06()
+{
+    Phonebook book;
+    initPhoneBook(book);
+    std::cout << book.toString() << std::endl;
+}
+
+
 int main()
 {
     main_phonebook_01();
@@ -158,8 +130,6 @@ int main()
     main_phonebook_04();
     main_phonebook_05();
     main_phonebook_06();
-    main_phonebook_07();
-    main_phonebook_08();
 
     return 0;
 }
@@ -167,3 +137,79 @@ int main()
 // ===========================================================================
 // End-of-File
 // ===========================================================================
+
+//
+void ausgabe(const std::string& name) {
+    std::cout << "Name: " << name << std::endl;
+}
+
+void main_phonebook()
+{
+    Phonebook book;
+
+    book.insert("Hubert", "Mueller", 123456);
+    book.insert("Anton", "Huber", 354534);
+    book.insert("Sepp", "Meier", 8723223);
+    book.insert("Wolfang", "Wagner", 8723223);
+
+    // Range-Based for Loop
+    for (auto& elem : book) {
+
+        std::string key = elem.firstName();
+
+        //std::string first;
+        //std::string last;
+
+        //Phonebook::keyToNames(key, first, last);
+
+        //std::cout << first << "  " << last << ": " << elem.second << std::endl;
+    }
+}
+//
+//
+//void main_phonebook_zum_zweiten()
+//{
+//    Phonebook book;
+//
+//    book.insert("Hubert", "Mueller", 123456);
+//    book.insert("Anton", "Huber", 354534);
+//    book.insert("Sepp", "Meier", 8723223);
+//
+//    std::cout << book << std::endl;
+//}
+//
+//
+//void main_phonebook_zum_ersten()
+//{
+//    Phonebook book;
+//
+//    book.insert("Hubert", "Mueller", 123456);
+//    book.insert("Anton", "Huber", 354534);
+//    book.insert("Sepp", "Meier", 8723223);
+//
+//    book.print();
+//
+//    long phoneNumber = 0;
+//
+//    bool found = book.search("Anton", "Huber", phoneNumber);
+//
+//    if (found) {
+//
+//        std::cout << "Anton Huber hat die Tel.Nr. " << phoneNumber << std::endl;
+//    }
+//
+//    book.remove("Sepp", "Meier");
+//
+//    book.print();
+//
+//    // ====================================
+//    // Erstelle Liste mit allen Namen aus dem Tel.Buch:
+//
+//    std::forward_list<std::string> names = book.getNames();
+//
+//    std::for_each(
+//        names.begin(),
+//        names.end(),
+//        ausgabe
+//    );
+//}

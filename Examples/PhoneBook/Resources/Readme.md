@@ -5,7 +5,7 @@ Folgende Aspekte werden betrachtet:
   * Anwendung elementarer STL-Container (`std::vector`)
   * Anwendung elementarer STL Algorithmen (`std::find_if`, `std::copy_if`, `std::remove_if`, `std::sort`, `std::accumulate`, `std::for_each`)
   * Das Iteratoren-Konzept (Methode `import`)
-  * Einsatz von Funktoren (*Callable Objects*)
+  * Einsatz von Funktionsobjekten (Funktoren, *Callable Objects*)
   * Klasse `std::ostringstream`
   * Sortieren (`std::sort`)
   * Definition einer Schnittstelle (`IPhoneBook`)

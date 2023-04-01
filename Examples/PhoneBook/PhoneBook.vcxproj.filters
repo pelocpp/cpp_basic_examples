@@ -29,15 +29,24 @@
     <ClCompile Include="Contact.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PhonebookEx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PhonebookMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="PhoneBook.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Contact.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IPhonebook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PhonebookEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PhonebookMap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
