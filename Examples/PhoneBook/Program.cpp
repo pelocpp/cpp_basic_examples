@@ -10,6 +10,7 @@
 #include "PhonebookMap.h"
  
 using namespace PhonebookVector;
+// or
 // using namespace PhonebookMap;
 
 // function prototypes
@@ -52,7 +53,7 @@ void main_phonebook_02()
     std::cout << book << std::endl;
 
     long number = 0;
-    bool found = book.search("Sepp", "Wagner", number);
+    book.search("Sepp", "Wagner", number);
     std::cout << "Sepp has number " << number << std::endl;
 
     bool result = book.remove("Sepp", "Wagner");
@@ -125,11 +126,11 @@ void main_phonebook_06()
 
 int main()
 {
-    //main_phonebook_01();
-    //main_phonebook_02();
-    //main_phonebook_03();
-    //main_phonebook_04();
-    //main_phonebook_05();
+    main_phonebook_01();
+    main_phonebook_02();
+    main_phonebook_03();
+    main_phonebook_04();
+    main_phonebook_05();
     main_phonebook_06();
 
     return 0;
@@ -138,47 +139,3 @@ int main()
 // ===========================================================================
 // End-of-File
 // ===========================================================================
-
-//
-void ausgabe(const std::string& name) {
-    std::cout << "Name: " << name << std::endl;
-}
-
-
-
-//
-//
-//void main_phonebook_zum_ersten()
-//{
-//    Phonebook book;
-//
-//    book.insert("Hubert", "Mueller", 123456);
-//    book.insert("Anton", "Huber", 354534);
-//    book.insert("Sepp", "Meier", 8723223);
-//
-//    book.print();
-//
-//    long phoneNumber = 0;
-//
-//    bool found = book.search("Anton", "Huber", phoneNumber);
-//
-//    if (found) {
-//
-//        std::cout << "Anton Huber hat die Tel.Nr. " << phoneNumber << std::endl;
-//    }
-//
-//    book.remove("Sepp", "Meier");
-//
-//    book.print();
-//
-//    // ====================================
-//    // Erstelle Liste mit allen Namen aus dem Tel.Buch:
-//
-//    std::forward_list<std::string> names = book.getNames();
-//
-//    std::for_each(
-//        names.begin(),
-//        names.end(),
-//        ausgabe
-//    );
-//}

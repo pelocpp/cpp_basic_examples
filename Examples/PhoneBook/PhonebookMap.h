@@ -8,6 +8,7 @@
 #include <string>
 #include <unordered_map>
 #include <utility>
+#include <sstream>
 
 #include "IPhonebook.h"
 
@@ -17,13 +18,6 @@ namespace PhonebookMap {
     class Phonebook : public IPhonebook
     {
         friend std::ostream& operator<< (std::ostream&, const Phonebook&);
-
-        friend void printEntry(const std::pair<std::string, long>& entry);
-
-      //  friend std::string appendEntry(const std::string& first, std::pair<std::string, long> entry);
-
-      //  friend std::string appendEntry(const std::string& first, std::pair<std::string, long> entry);
-
 
     private:
         class ContactInserter
@@ -42,6 +36,47 @@ namespace PhonebookMap {
                 std::string lastName = names.second;
 
                 m_book.insert(firstName, lastName, entry.second);
+            }
+        };
+
+        class ContactAppender
+        {
+        public:
+            std::string operator() (const std::string& first, const std::pair<std::string, long> entry)
+            {
+                std::pair<std::string, std::string> names = keyToNames(entry.first);
+
+                std::string firstName = names.first;
+                std::string lastName = names.second;
+
+                std::ostringstream ss;
+
+                ss << firstName << " "
+                    << lastName << ": "
+                    << entry.second << std::endl;
+
+                return first + ss.str();
+            }
+        };
+
+        class ContactPrinter
+        {
+        private:
+            std::ostream& m_os;
+
+        public:
+            ContactPrinter(std::ostream& os) : m_os(os) {}
+
+            void operator() (const std::pair<std::string, long> entry)
+            {
+                std::string key = entry.first;   // "Anton_Huber"
+
+                std::pair<std::string, std::string> names = keyToNames(key);
+
+                m_os << names.first << ", "
+                    << names.second << ": "
+                    << entry.second
+                    << std::endl;
             }
         };
 
@@ -69,8 +104,6 @@ namespace PhonebookMap {
         static std::string namesToKey(const std::string& first, const std::string& last);
 
         static std::string entryToName(std::pair<std::string, long> entry);
-
-         static std::string appendEntry(const std::string& first, std::pair<std::string, long> entry);
     };
 }
 

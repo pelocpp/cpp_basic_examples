@@ -142,14 +142,11 @@
     <None Include="Resources\Readme.md" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Contact.cpp" />
-    <ClCompile Include="PhoneBook.cpp" />
     <ClCompile Include="PhonebookVector.cpp" />
     <ClCompile Include="PhonebookMap.cpp" />
     <ClCompile Include="Program.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Contact.h" />
     <ClInclude Include="IPhonebook.h" />
     <ClInclude Include="PhonebookVector.h" />
     <ClInclude Include="PhonebookMap.h" />

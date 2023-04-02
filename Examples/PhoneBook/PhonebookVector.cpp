@@ -12,13 +12,17 @@
 
 namespace PhonebookVector {
 
+    // =======================================================================
     // getter
+
     size_t Phonebook::size() const
     {
         return m_vec.size();
     }
 
-    // methods
+    // =======================================================================
+    // public interface
+
     bool Phonebook::insert(const std::string& first, const std::string& last, long number)
     {
         if (contains(first, last)) {
@@ -143,9 +147,12 @@ namespace PhonebookVector {
         );
     }
 
+    // =======================================================================
+    // output
+
     std::ostream& operator<<(std::ostream& os, const Phonebook& book)
     {
-        Phonebook::ContactPrinter printer (std::cout);
+        Phonebook::ContactPrinter printer (os);
 
         std::for_each(
             book.m_vec.begin(),

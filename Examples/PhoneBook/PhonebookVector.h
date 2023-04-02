@@ -71,7 +71,7 @@ namespace PhonebookVector {
             }
         };
 
-        struct ContactAppender
+        class ContactAppender
         {
         public:
             std::string operator() (const std::string& first, const Contact& next)
@@ -100,7 +100,7 @@ namespace PhonebookVector {
             }
         };
 
-        struct ContactPrinter
+        class ContactPrinter
         {
         private:
             std::ostream& m_os;
