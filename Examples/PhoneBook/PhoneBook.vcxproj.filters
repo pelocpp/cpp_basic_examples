@@ -29,7 +29,7 @@
     <ClCompile Include="Contact.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PhonebookEx.cpp">
+    <ClCompile Include="PhonebookVector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PhonebookMap.cpp">
@@ -43,7 +43,7 @@
     <ClInclude Include="IPhonebook.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PhonebookEx.h">
+    <ClInclude Include="PhonebookVector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PhonebookMap.h">

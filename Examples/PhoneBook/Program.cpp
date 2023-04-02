@@ -6,9 +6,11 @@
 #include <string>
 #include <algorithm>
 
-#include "PhonebookEx.h"
+#include "PhonebookVector.h"
+#include "PhonebookMap.h"
  
 using namespace PhonebookVector;
+// using namespace PhonebookMap;
 
 // function prototypes
 void main_phonebook_01();
@@ -121,14 +123,13 @@ void main_phonebook_06()
     std::cout << book.toString() << std::endl;
 }
 
-
 int main()
 {
-    main_phonebook_01();
-    main_phonebook_02();
-    main_phonebook_03();
-    main_phonebook_04();
-    main_phonebook_05();
+    //main_phonebook_01();
+    //main_phonebook_02();
+    //main_phonebook_03();
+    //main_phonebook_04();
+    //main_phonebook_05();
     main_phonebook_06();
 
     return 0;
@@ -143,40 +144,8 @@ void ausgabe(const std::string& name) {
     std::cout << "Name: " << name << std::endl;
 }
 
-void main_phonebook()
-{
-    Phonebook book;
 
-    book.insert("Hubert", "Mueller", 123456);
-    book.insert("Anton", "Huber", 354534);
-    book.insert("Sepp", "Meier", 8723223);
-    book.insert("Wolfang", "Wagner", 8723223);
 
-    // Range-Based for Loop
-    for (auto& elem : book) {
-
-        std::string key = elem.firstName();
-
-        //std::string first;
-        //std::string last;
-
-        //Phonebook::keyToNames(key, first, last);
-
-        //std::cout << first << "  " << last << ": " << elem.second << std::endl;
-    }
-}
-//
-//
-//void main_phonebook_zum_zweiten()
-//{
-//    Phonebook book;
-//
-//    book.insert("Hubert", "Mueller", 123456);
-//    book.insert("Anton", "Huber", 354534);
-//    book.insert("Sepp", "Meier", 8723223);
-//
-//    std::cout << book << std::endl;
-//}
 //
 //
 //void main_phonebook_zum_ersten()

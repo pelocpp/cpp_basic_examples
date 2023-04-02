@@ -2,20 +2,21 @@
 // End-of-File
 // ===========================================================================
 
+#include "PhonebookMap.h"
+
 #include <iostream>
 #include <string>
 #include <algorithm>
 #include <iterator>
 #include <forward_list>
+#include <functional>
+#include <sstream>
+#include <numeric>
 
 #include <unordered_map>
 #include <utility>
 
-#include "PhonebookMap.h"
-
-
 namespace PhonebookMap {
-
 
     size_t Phonebook::size() const
     {
@@ -35,6 +36,15 @@ namespace PhonebookMap {
         m_map.insert(entry);
 
         return true;
+    }
+
+    bool Phonebook::contains(const std::string& first, const std::string& last) const
+    {
+        std::string key = namesToKey(first, last);
+
+        std::unordered_map<std::string, long>::const_iterator pos = m_map.find(key);
+
+        return (pos == m_map.end()) ? false : true;
     }
 
     bool Phonebook::search(const std::string& first, const std::string& last, long& number) const
@@ -61,14 +71,6 @@ namespace PhonebookMap {
         }
     }
 
-    bool Phonebook::contains(const std::string& first, const std::string& last)
-    {
-        std::string key = namesToKey(first, last);
-
-        std::unordered_map<std::string, long>::iterator pos = m_map.find(key);
-
-        return (pos == m_map.end()) ? false : true;
-    }
 
     bool Phonebook::remove(const std::string& first, const std::string& last)
     {
@@ -104,7 +106,6 @@ namespace PhonebookMap {
         }
     }
 
-    // TODO das kann man static machen !!!!!!!!!!!!!!!!!!!
     std::string Phonebook::entryToName(std::pair<std::string, long> entry)
     {
         std::string key = entry.first;
@@ -121,9 +122,9 @@ namespace PhonebookMap {
         std::forward_list<std::string> names;
 
         std::transform(
-            m_map.begin(),                 // Quelle - Anfang
-            m_map.end(),                   // Quelle - Ende
-            std::front_inserter(names),    // Ziel -Anfang  // Achtung: Verwende Proxy
+            m_map.begin(),
+            m_map.end(),
+            std::front_inserter(names),
             entryToName
         );
 
@@ -134,38 +135,65 @@ namespace PhonebookMap {
     {
         std::string key = entry.first;   // "Anton_Huber"
 
-        // 1. Variante:
         std::pair<std::string, std::string> names = Phonebook::keyToNames(key);
 
-        std::cout
-            << "Vorname: " << names.first
-            << ", Nachname: " << names.second << ": "
-            << entry.second << std::endl;
-
-        // 2. Variante:
-
-        //std::string firstName;
-        //std::string lastName;
-
-        //Phonebook::keyToNames(key, firstName, lastName);
-
-        //std::cout
-        //    << "Vorname: " << firstName
-        //    << ", Nachname: " << lastName << ": "
-        //    << entry.second << std::endl;
+        std::cout << names.first << ", "
+            << names.second << ": "
+            << entry.second
+            << std::endl;
     }
 
-    //void Phonebook::print() const
+    //void insertEntry(std::pair<std::string, long> entry)
     //{
-    //    std::for_each(
-    //        m_map.begin(),
-    //        m_map.end(),
-    //        printEntry
-    //    );
+
     //}
 
+    static void insertEntry(Phonebook&, std::pair<std::string, long> entry)
+    {
 
+    }
 
+    void Phonebook::import(const IPhonebook& otherBook)
+    {
+        // need access to underlying 'm_map' object
+        const Phonebook& book = dynamic_cast<const Phonebook&>(otherBook);
+
+        ContactInserter inserter(*this);
+
+        //std::for_each(
+        //    book.m_map.begin(),
+        //    book.m_map.end(),
+        //    [this](std::pair<std::string, long> entry) {
+
+        //        std::pair<std::string, std::string> xxx = Phonebook::keyToNames(entry.first);
+
+        //        std::string firstName = xxx.first;
+        //        std::string lastName = xxx.second;
+
+        //        this->insert(firstName, lastName, entry.second);
+        //    }
+        //);
+
+        std::for_each(
+            book.m_map.begin(),
+            book.m_map.end(),
+            inserter
+        );
+    }
+
+    std::string Phonebook::toString() const
+    {
+      //  ContactAppender appender;
+
+        std::string result = std::accumulate(
+            m_map.begin(),
+            m_map.end(),
+            std::string(), // first element
+            Phonebook::appendEntry
+        );
+
+        return result;
+    }
 
 
 
@@ -192,16 +220,47 @@ namespace PhonebookMap {
         return result;
     }
 
+                                // const std::string& first, std::pair<std::string, long> entry
+    std::string Phonebook::appendEntry(const std::string& first, std::pair<std::string, long> entry)
+    {
+        std::ostringstream ss;
+
+        std::pair<std::string, std::string> names = Phonebook::keyToNames(entry.first);
+
+        std::string firstName = names.first;
+        std::string lastName = names.second;
+
+        ss << firstName << " "
+            << lastName << ": "
+            << entry.second << std::endl;
+
+        return first + ss.str();
+    }
+
+
+    //std::string operator() (const std::string& first, const Contact& next)
+    //{
+    //    std::ostringstream ss;
+
+    //    ss << next.firstName() << ", "
+    //        << next.lastName() << ": "
+    //        << next.getNumber() << std::endl;
+
+    //    return first + ss.str();
+    //}
+
+
+
     // oder
 
-    void Phonebook::keyToNames(const std::string& key, std::string& first, std::string& last)
-    {
-        size_t pos_underscore = key.find("_");
+    //void Phonebook::keyToNames(const std::string& key, std::string& first, std::string& last)
+    //{
+    //    size_t pos_underscore = key.find("_");
 
-        first = key.substr(0, pos_underscore);
+    //    first = key.substr(0, pos_underscore);
 
-        last = key.substr(pos_underscore + 1);
-    }
+    //    last = key.substr(pos_underscore + 1);
+    //}
 
     // ========================================================
 
@@ -209,7 +268,11 @@ namespace PhonebookMap {
 
     std::ostream& operator<< (std::ostream& os, const Phonebook& book)
     {
-        // book.print();
+        std::for_each(
+            book.m_map.begin(),
+            book.m_map.end(),
+            printEntry
+        );
 
         return os;
     }

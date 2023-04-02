@@ -2,27 +2,23 @@
 // Phonebook.cpp
 // ===========================================================================
 
+#include "PhonebookVector.h"
+
 #include <iostream>
 #include <string>
 #include <algorithm>
 #include <numeric>
 #include <sstream>
 
-
-#include "PhoneBookEx.h"
-
-
 namespace PhonebookVector {
 
-
-    // ===========================================================================
-    // class Phonebook - public interface
-
+    // getter
     size_t Phonebook::size() const
     {
         return m_vec.size();
     }
 
+    // methods
     bool Phonebook::insert(const std::string& first, const std::string& last, long number)
     {
         if (contains(first, last)) {
@@ -110,9 +106,9 @@ namespace PhonebookVector {
         ContactTransformer transform;
 
         std::transform(
-            m_vec.begin(),                 // Quelle - Anfang
-            m_vec.end(),                   // Quelle - Ende
-            std::front_inserter(names),    // Ziel -Anfang  // Achtung: Verwende Proxy
+            m_vec.begin(),
+            m_vec.end(),
+            std::front_inserter(names),
             transform
         );
 
@@ -133,16 +129,18 @@ namespace PhonebookVector {
         return result;
     }
 
-    void Phonebook::import(const IPhonebook& ibook)
+    void Phonebook::import(const IPhonebook& otherBook)
     {
-        //// need access to underlying 'm_vec' object
-        //const Phonebook& book = dynamic_cast<const Phonebook&>(ibook);
+        ContactInserter inserter (*this);
 
-        //std::for_each(
-        //    book.m_vec.begin(),
-        //    book.m_vec.end(),
-        //    Inserter(*this)
-        //);
+        // need access to underlying 'm_vec' object
+        const Phonebook& book = dynamic_cast<const Phonebook&>(otherBook);
+
+        std::for_each(
+            book.m_vec.begin(),
+            book.m_vec.end(),
+            inserter
+        );
     }
 
     std::ostream& operator<<(std::ostream& os, const Phonebook& book)
@@ -157,73 +155,7 @@ namespace PhonebookVector {
 
         return os;
     }
-
 }
-
-// ===========================================================================
-// class Phonebook - helper classes providing functors for STL algorithms
-
-//void Phonebook::Printer::operator() (const Contact& contact)
-//{
-//    m_os << contact << std::endl;
-//}
-//
-//bool Phonebook::Comparer::operator() (const Contact& contact1, const Contact& contact2)
-//{
-//    if (contact1.getlast() == contact2.getlast()) {
-//        return contact1.getfirst() < contact2.getfirst();
-//    }
-//    else {
-//        return contact1.getlast() < contact2.getlast();
-//    }
-//}
-//
-//bool Phonebook::SearcherContact::operator() (const Contact& contact)
-//{
-//    if (contact.getfirst() == m_first && contact.getlast() == m_last) {
-//        return true;
-//    }
-//    else {
-//        return false;
-//    }
-//}
-//
-//bool Phonebook::Searcherlast::operator() (const Contact& contact)
-//{
-//    if (contact.getlast() == m_last) {
-//        return true;
-//    }
-//    else {
-//        return false;
-//    }
-//}
-//
-//void Phonebook::Inserter::operator() (const Contact& contact)
-//{
-//    m_book.insert(contact);
-//};
-//
-//std::string Phonebook::Appender::operator() (const std::string& first, const Contact& next)
-//{
-//    std::ostringstream ss;
-//    ss << next.getfirst() << ", "
-//        << next.getlast() << ": "
-//        << next.getNumber() << std::endl;
-//
-//    return first + ss.str();
-//}
-//
-//bool Phonebook::SearcherFullNameAndNumber::operator() (const Contact& contact) {
-//
-//    if (contact.getfirst() == m_first &&
-//        contact.getlast() == m_last &&
-//        contact.getNumber() == m_number) {
-//        return true;
-//    }
-//    else {
-//        return false;
-//    }
-//}
 
 // ===========================================================================
 // End-of-File
