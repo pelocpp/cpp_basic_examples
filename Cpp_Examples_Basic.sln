@@ -26,6 +26,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Rectangles", "Examples\Rect
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "STL", "Examples\STL\STL.vcxproj", "{236D234B-3B3C-48DD-8394-DC5A7D7B3F06}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LowLevelProgramming", "Examples\LowLevelProgramming\LowLevelProgramming.vcxproj", "{22E4E227-D6B6-4C6C-BBB7-ADA124D4B809}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -106,6 +108,14 @@ Global
 		{236D234B-3B3C-48DD-8394-DC5A7D7B3F06}.Release|x64.Build.0 = Release|x64
 		{236D234B-3B3C-48DD-8394-DC5A7D7B3F06}.Release|x86.ActiveCfg = Release|Win32
 		{236D234B-3B3C-48DD-8394-DC5A7D7B3F06}.Release|x86.Build.0 = Release|Win32
+		{22E4E227-D6B6-4C6C-BBB7-ADA124D4B809}.Debug|x64.ActiveCfg = Debug|x64
+		{22E4E227-D6B6-4C6C-BBB7-ADA124D4B809}.Debug|x64.Build.0 = Debug|x64
+		{22E4E227-D6B6-4C6C-BBB7-ADA124D4B809}.Debug|x86.ActiveCfg = Debug|Win32
+		{22E4E227-D6B6-4C6C-BBB7-ADA124D4B809}.Debug|x86.Build.0 = Debug|Win32
+		{22E4E227-D6B6-4C6C-BBB7-ADA124D4B809}.Release|x64.ActiveCfg = Release|x64
+		{22E4E227-D6B6-4C6C-BBB7-ADA124D4B809}.Release|x64.Build.0 = Release|x64
+		{22E4E227-D6B6-4C6C-BBB7-ADA124D4B809}.Release|x86.ActiveCfg = Release|Win32
+		{22E4E227-D6B6-4C6C-BBB7-ADA124D4B809}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
