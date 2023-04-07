@@ -139,16 +139,22 @@ void low_level_07_right_shift_signed()
     std::cout << bsShifted << std::endl;
 }
 
-// ===========================================
+// ===========================================================================
 
 void main_low_level_01()
 {
     low_level_01_bitwise_and();
+    std::cout << std::endl;
     low_level_02_bitwise_or();
+    std::cout << std::endl;
     low_level_03_bitwise_xor();
+    std::cout << std::endl;
     low_level_04_bitwise_negate();
+    std::cout << std::endl;
     low_level_05_left_shift();
+    std::cout << std::endl;
     low_level_06_right_shift_unsigned();
+    std::cout << std::endl;
     low_level_07_right_shift_signed();
 }
 

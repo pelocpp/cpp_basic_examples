@@ -47,6 +47,14 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
+#### [Low-Level Programming in C/C++](Examples/LowLevelProgramming/Resources/Readme.md)
+
+Folgende Aspekte werden betrachtet:
+  * Operatoren zur Bitmanipulation: `&`, `|`, `^` und `~` sowie die beiden Shift-Operatoren `<<` und `>>`
+  * Kleinere Beispiele auf Basis der Operatoren zur Bitmanipulation.
+
+---
+
 #### [Eine Klasse *IntegerSet*](Examples/IntegerSet/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:

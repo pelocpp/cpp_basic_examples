@@ -8,6 +8,7 @@ extern void main_low_level_02();
 int main()
 {
     main_low_level_01();
+    main_low_level_02();
 
     return 1;
 }
