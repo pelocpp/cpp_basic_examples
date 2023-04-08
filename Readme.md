@@ -9,6 +9,15 @@ die Beispiele auf dem Niveau für C++-Einsteiger
 
 ## Inhaltsverzeichnis:
 
+
+#### [Low-Level Programmierung in C/C++](Examples/LowLevelProgramming/Resources/Readme.md)
+
+Folgende Aspekte werden betrachtet:
+  * Operatoren zur Bitmanipulation: `&`, `|`, `^` und `~` sowie die beiden Shift-Operatoren `<<` und `>>`
+  * Kleinere Beispiele auf Basis der Bitmanipulationsoperatoren.
+
+---
+
 #### [Klasse *Time*](Examples/Time/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
@@ -47,15 +56,7 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### [Low-Level Programming in C/C++](Examples/LowLevelProgramming/Resources/Readme.md)
-
-Folgende Aspekte werden betrachtet:
-  * Operatoren zur Bitmanipulation: `&`, `|`, `^` und `~` sowie die beiden Shift-Operatoren `<<` und `>>`
-  * Kleinere Beispiele auf Basis der Operatoren zur Bitmanipulation.
-
----
-
-#### [Eine Klasse *IntegerSet*](Examples/IntegerSet/Resources/Readme.md)
+#### [Klasse *IntegerSet*](Examples/IntegerSet/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
   * Realisierung einer Klasse mit dynamischen Daten im Instanzvariablenbereich (Variante 1)
@@ -95,10 +96,10 @@ Folgende Aspekte werden zum Thema &ldquo;Vererbung&rdquo; betrachtet:
 
 ---
 
-#### [Bankkonten und -institut](Examples/AccountsAndBank/Resources/Readme.md)
+#### [Vererbung am Beispiel von Bankkonten und -institut](Examples/AccountsAndBank/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
-  * Übung zum Thema "Vererbung"
+  * Übung zum Thema &ldquo;Vererbung&ldquo;
   * Die Konzepte zum Vererben und Überschreiben von Methoden werden an einem realistischen Beispiel demonstriert.
   * STL-Container `std::vector`
 
@@ -117,13 +118,10 @@ Folgende Aspekte werden betrachtet:
 
 Folgende Aspekte werden betrachtet:
   * Entwicklung einer Anwendung mit der STL (*Standard Template Library*)
-  * Anwendung elementarer STL-Container (`std::vector`)
-  * Anwendung elementarer STL Algorithmen (`std::find_if`, `std::copy_if`, `std::remove_if`, `std::sort`, `std::accumulate`, `std::for_each`)
-  * Das Iteratoren-Konzept (Methode `import`)
-  * Einsatz von Funktoren (*Callable Objects*)
-  * Klasse `std::ostringstream`
-  * Sortieren (`std::sort`)
   * Definition einer Schnittstelle (`IPhoneBook`)
+  * Anwendung elementarer STL-Container (`std::vector`, `std::unordered_map`)
+  * Anwendung elementarer STL Algorithmen (`std::find_if`, `std::remove_if`, `std::transform`, `std::accumulate`, `std::for_each`)
+  * Einsatz von Funktoren (*Callable Objects*)
 
 ---
 
