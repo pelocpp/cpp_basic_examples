@@ -6,7 +6,7 @@
 #include <vector>
 #include <algorithm>
 
-void printToConsole(int value) {
+void printToConsole (int value) {
     std::cout << ">: " << value << std::endl;
 }
 
