@@ -25,12 +25,18 @@ int countZerosEx(unsigned int value);
 void powerOfTwo();
 void printIntAsBinary(unsigned int value);
 
+unsigned int encodeColor(unsigned char red, unsigned char green, unsigned char blue);
+void decodeColor(unsigned int color, unsigned char& red, unsigned char& green, unsigned char& blue);
+void decodeColorEx(unsigned int color, unsigned char* red, unsigned char* green, unsigned char* blue);
+
 void low_level_01_set_clear_bit();
 void low_level_02_count_ones_and_zeros();
 void low_level_03_count_ones_and_zeros_ex();
 void low_level_04_print_binary();
 void low_level_05_testPowerOfTwo();
 void low_level_06_testSignedVsUnsignedShift();
+void low_level_07_encodeColor();
+void low_level_07_decodeColor();
 
 // ===========================================================================
 
@@ -335,6 +341,71 @@ void low_level_05_testPowerOfTwo()
 
 // ===========================================================================
 
+unsigned int encodeColor(unsigned char red, unsigned char green, unsigned char blue)
+{
+    unsigned int redChannel = red;
+    unsigned int greenChannel = green;
+    unsigned int blueChannel = blue;
+
+    redChannel = redChannel << 16;
+    greenChannel = greenChannel << 8;
+
+    unsigned int result = redChannel | greenChannel | blueChannel;
+    return result;
+}
+
+void decodeColor(unsigned int color, unsigned char& red, unsigned char& green, unsigned char& blue)
+{
+    red = (color & 0x00FF0000) >> 16;
+    green = (color & 0x0000FF00) >> 8;
+    blue = (color & 0x000000FF) >> 0;
+}
+
+// or
+
+void decodeColorEx(unsigned int color, unsigned char* red, unsigned char* green, unsigned char* blue)
+{
+    *red = (color & 0x00FF0000) >> 16;
+    *green = (color & 0x0000FF00) >> 8;
+    *blue = (color & 0x000000FF) >> 0;
+}
+
+void low_level_07_encodeColor()
+{
+    // 255 - 0 - 255: Magenta
+    unsigned int magenta = encodeColor(255, 0, 255);
+    std::bitset<32> bsMagenta(magenta);
+    std::cout << bsMagenta << std::endl;
+
+    // 255 - 102 - 102: very red light
+    unsigned int veryRedLight = encodeColor(255, 102, 102);
+    std::bitset<32> bsVeryRedLight(veryRedLight);
+    std::cout << bsVeryRedLight << std::endl;
+}
+
+void low_level_07_decodeColor()
+{
+    // light green:  0 - 255 - 51
+    unsigned int lightGreen = encodeColor(0, 255, 51);
+
+    unsigned char red = 0;
+    unsigned char green = 0;
+    unsigned char blue = 0;
+
+    decodeColorEx(lightGreen, &red, &green, &blue);
+
+    std::bitset<8> bsRed(red);
+    std::bitset<8> bsGreen(green);
+    std::bitset<8> bsBlue(blue);
+
+    std::cout << "LightGreen:" << std::endl;
+    std::cout << bsRed << std::endl;
+    std::cout << bsGreen << std::endl;
+    std::cout << bsBlue << std::endl;
+}
+
+// ===========================================================================
+
 void low_level_06_testSignedVsUnsignedShift()
 {
     // create initial mask: 1 in leftmost position
@@ -370,6 +441,10 @@ void main_low_level_02()
     low_level_05_testPowerOfTwo();
     std::cout << std::endl;
     low_level_06_testSignedVsUnsignedShift();
+    std::cout << std::endl;
+    low_level_07_encodeColor();
+    std::cout << std::endl;
+    low_level_07_decodeColor();
 }
 
 // ===========================================================================
