@@ -34,7 +34,9 @@ namespace IntegerSetVector_MoveSemantics {
 
         // search element
         std::vector<int>::const_iterator it = std::find(
-            m_set.begin(), m_set.end(), n
+            m_set.begin(),
+            m_set.end(),
+            n
         );
 
         return (it != m_set.end()) ? true : false;
@@ -53,7 +55,9 @@ namespace IntegerSetVector_MoveSemantics {
     bool IntegerSet::remove(int n) {
 
         std::vector<int>::const_iterator it = std::find(
-            m_set.begin(), m_set.end(), n
+            m_set.begin(), 
+            m_set.end(),
+            n
         );
 
         // element found, delete it
