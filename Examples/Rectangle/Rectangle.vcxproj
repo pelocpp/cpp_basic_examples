@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Program.cpp" />
+    <ClCompile Include="Rectangle_Version_03.cpp" />
     <ClCompile Include="Rectangle_Version_01.cpp" />
     <ClCompile Include="Rectangle_Version_02.cpp" />
   </ItemGroup>
@@ -148,6 +149,7 @@
     <ClInclude Include="Point.h" />
     <ClInclude Include="Rectangle_01.h" />
     <ClInclude Include="Rectangle_02.h" />
+    <ClInclude Include="Rectangle_03.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Readme.md" />

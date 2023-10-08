@@ -2,9 +2,6 @@
 // Rectangle.cpp // Version 01
 // ===========================================================================
 
-#include <iostream>
-#include <cmath>
-
 #include "Rectangle_01.h"
 
 namespace Rectangle_01 {
@@ -19,10 +16,10 @@ namespace Rectangle_01 {
     }
 
     // getter/setter
-    double Rectangle::getX1() { return m_x1; }
-    double Rectangle::getY1() { return m_y1; }
-    double Rectangle::getX2() { return m_x2; }
-    double Rectangle::getY2() { return m_y2; }
+    double Rectangle::getX1() const { return m_x1; }
+    double Rectangle::getY1() const { return m_y1; }
+    double Rectangle::getX2() const { return m_x2; }
+    double Rectangle::getY2() const { return m_y2; }
 
     void Rectangle::setX1(double x1)
     {
@@ -144,6 +141,25 @@ namespace Rectangle_01 {
         }
 
         return Rectangle(x1, y1, x2, y2);
+    }
+
+    bool Rectangle::equals(const Rectangle& other) const
+    {
+        if (getX1() != other.getX1()) {
+            return false;
+        }
+        else if (getY1() != other.getY1()) {
+            return false;
+        }
+        else if (getX2() != other.getX2()) {
+            return false;
+        }
+        else if (getY2() != other.getY2()) {
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 
     // output

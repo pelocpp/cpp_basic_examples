@@ -5,11 +5,15 @@
 #pragma once
 
 #include <iostream>
+#include <cmath>
 
 namespace Rectangle_01 {
 
     class Rectangle
     {
+        // output
+        friend std::ostream& operator << (std::ostream&, const Rectangle&);
+
     private:
         double m_x1;
         double m_y1;
@@ -22,10 +26,10 @@ namespace Rectangle_01 {
         Rectangle(double, double, double, double);
 
         // getter/setter
-        double getX1();
-        double getY1();
-        double getX2();
-        double getY2();
+        double getX1() const;
+        double getY1() const;
+        double getX2() const;
+        double getY2() const;
         void setX1(double);
         void setY1(double);
         void setX2(double);
@@ -41,13 +45,11 @@ namespace Rectangle_01 {
         void adjustHeight(double);
         void move(double, double);
         Rectangle intersection(const Rectangle&) const;
+        bool equals(const Rectangle&) const;
 
     private:
         // private helper methods
         void normalize();
-
-        // output
-        friend std::ostream& operator << (std::ostream&, const Rectangle&);
     };
 }
 

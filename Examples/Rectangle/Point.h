@@ -6,29 +6,37 @@
 
 #include <iostream>
 
-class Point
-{
-private:
-    double m_x;
-    double m_y;
+namespace Rectangle_02 {
 
-public:
-    // c'tor(s)
-    Point();
-    Point(double, double);
+    class Point
+    {
+    private:
+        double m_x;
+        double m_y;
 
-    // getter/setter
-    double getX() const;
-    double getY() const;
-    void setX(double);
-    void setY(double);
+    public:
+        // c'tor(s)
+        Point();
+        Point(double, double);
 
-    // operators
-    Point operator+ (const Point&);
-    Point& operator+= (const Point&);
-};
+        // getter/setter
+        double getX() const;
+        double getY() const;
+        void setX(double);
+        void setY(double);
 
-std::ostream& operator << (std::ostream&, const Point&);
+        // operators
+        Point operator+ (const Point&);
+        Point& operator+= (const Point&);
+    };
+
+    // =======================================================================
+    // global operators
+    bool operator == (const Point&, const Point&);
+    bool operator != (const Point&, const Point&);
+
+    std::ostream& operator << (std::ostream&, const Point&);
+}
 
 // ===========================================================================
 // End-of-File

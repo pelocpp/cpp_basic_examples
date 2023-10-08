@@ -1,55 +1,56 @@
 // ===============================================================================
-// Rectangle.h // Version 02
+// Rectangle.h // Version 03
 // ===============================================================================
 
 #pragma once
 
 #include <iostream>
-#include <cmath>
 
-#include "Point.h"
-
-namespace Rectangle_02 {
+namespace Rectangle_03 {
 
     class Rectangle
     {
     private:
-        Point m_p1;
-        Point m_p2;
+        double m_top;
+        double m_left;
+        double m_width;
+        double m_height;
 
     public:
         // c'tors
         Rectangle();
-        Rectangle(Point, Point);
-        Rectangle(double, double, double, double);
+        Rectangle(double top, double left, double width, double height);
 
         // getter/setter
-        Point getLeftUpper() const;
-        Point getRightLower() const;
-        void setLeftUpper(const Point&);
-        void setRightLower(const Point&);
+        double getTop() const;
+        double getLeft() const;
+        double getWidth() const;
+        double getHeight() const;
 
-        // public interface
+        void setTop(double top);
+        void setLeft(double left);
+        void setWidth(double width);
+        void setHeight(double height);
+
+        // public interface // methods
         double circumference() const;
         double diagonal() const;
         double area() const;
         bool isSquare() const;
-        Point center() const;
+        void center(double& x, double& y) const;
         void adjustWidth(double);
         void adjustHeight(double);
-        void move(const Point&);
+        void move(double, double);
         Rectangle intersection(const Rectangle&) const;
-        bool equals(const Rectangle&) const;
-
-    private:
-        // private helper methods
-        void normalize();
     };
 
     // ===========================================================================
-    // global operators
 
-    std::ostream& operator<< (std::ostream&, const Rectangle&);
+    // global operators
+    bool operator == (const Rectangle&, const Rectangle&);
+    bool operator != (const Rectangle&, const Rectangle&);
+
+    std::ostream& operator<< (std::ostream& os, const Rectangle& rect);
 }
 
 // ===============================================================================

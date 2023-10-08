@@ -27,6 +27,9 @@
     <ClCompile Include="Point.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Rectangle_Version_03.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Rectangle_01.h">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Point.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle_03.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

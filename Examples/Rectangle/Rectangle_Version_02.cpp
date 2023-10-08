@@ -2,10 +2,6 @@
 // Rectangle.cpp // Version 02
 // ===========================================================================
 
-#include <iostream>
-#include <cmath>
-
-#include "Point.h"
 #include "Rectangle_02.h"
 
 namespace Rectangle_02 {
@@ -25,15 +21,8 @@ namespace Rectangle_02 {
     }
 
     // getter/setter
-    Point Rectangle::getLeftUpper() const
-    {
-        return m_p1;
-    }
-
-    Point Rectangle::getRightLower() const
-    { 
-        return m_p2;
-    }
+    Point Rectangle::getLeftUpper() const { return m_p1; }
+    Point Rectangle::getRightLower() const { return m_p2; }
 
     void Rectangle::setLeftUpper(const Point& p)
     {
@@ -144,6 +133,19 @@ namespace Rectangle_02 {
         }
 
         return Rectangle(x1, y1, x2, y2);
+    }
+
+    bool Rectangle::equals(const Rectangle& other) const
+    {
+        if (getLeftUpper() != other.getLeftUpper()) {
+            return false;
+        }
+        else if (getRightLower() != other.getRightLower()) {
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 
     // output
