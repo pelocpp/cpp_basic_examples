@@ -18,44 +18,6 @@ Folgende Aspekte werden betrachtet:
 
 ---
 
-#### [Klasse *Time*](Examples/Time/Resources/Readme.md)
-
-Folgende Aspekte werden betrachtet:
-  * Prinzipielle Realisierung einer einfachen Klasse *ohne* dynamische Daten im Instanzvariablenbereich
-  * Konstruktoren
-  * Zugriffsrechte (`private`, `public`)
-  * Überladen von Operatoren
-  * `friend`-Mechanismus
-  * *getter*/*setter*-Methoden
-  * Objekte als Rückgabewert von Methoden
-
----
-
-#### [Klasse *Fraction*](Examples/Fraction/Resources/Readme.md)
-
-Folgende Aspekte werden betrachtet:
-  * Prinzipielle Realisierung einer einfachen Klasse *ohne* dynamische Daten im Instanzvariablenbereich
-  * Konstruktoren
-  * Zugriffsrechte (`private`, `public`)
-  * Überladen von Operatoren
-  * `friend`-Mechanismus
-  * *getter*/*setter*-Methoden
-  * Klassenmethoden
-
----
-
-#### [Klasse *Rectangle*](Examples/Rectangle/Resources/Readme.md)
-
-Folgende Aspekte werden betrachtet:
-  * Prinzipielle Realisierung einer einfachen Klasse *ohne* dynamische Daten im Instanzvariablenbereich
-  * Konstruktoren
-  * Zugriffsrechte (`private`, `public`)
-  * *getter*/*setter*-Methoden
-  * Realisierung einfacher Methoden
-  * Objekte als Rückgabewert von Methoden
-
----
-
 #### [Klasse *IntegerSet*](Examples/IntegerSet/Resources/Readme.md)
 
 Folgende Aspekte werden betrachtet:
